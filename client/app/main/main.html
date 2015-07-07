@@ -13,8 +13,16 @@
     <div class="col-lg-12">
       <h1 class="page-header">Features:</h1>
       <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}</a></li>
+        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}</a><a class="close" ng-click="destroy(thing)">x</a></li>
       </ul>
+      <div>
+        <form name="form" class="form-inline" ng-submit="create(name)">
+          <div class="form-group">
+            <input class="form-control" type="text" name="text" ng-model="name"/>
+            <input class="btn btn-success" type="submit"/>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>

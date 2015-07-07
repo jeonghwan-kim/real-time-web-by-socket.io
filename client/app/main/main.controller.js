@@ -18,4 +18,14 @@ angular.module('realTimeWebBySocketioApp')
         });
       });
 
+      $scope.destroy = function (thing) {
+        $http.delete('/api/things/' + thing.name);
+      };
+
+      $scope.create = function (name) {
+        var thing = {name: name, info: ''};
+        $http.post('/api/things', thing);
+        $scope.name = '';
+      };
+
     });
